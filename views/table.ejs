@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./table.css">
+    <script src="./xlsx.full.min.js"></script>
+    <script>
+        function ex(tableid){
+            var t1 = document.getElementById(tableid);
+            var wb = XLSX.utils.table_to_book(t1);
+            XLSX.writeFile(wb, tableid+".xlsx");
+        }
+        function show(){
+            alert('sdadasdasd');
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="mytable">
+        <button onclick="ex('courses')">download</button>
+        <table id="courses">
+            <thead>
+                <th>course</th>
+                <th>number normal students</th>
+                <th>number graduation students</th>
+            </thead>
+            <tbody>
+                <%for(let ele in course){%>
+                    <tr onclick="showStudents(this)" data-courseName="<%=ele%>-<%=course[ele]['courseName']%>" data-normalStudents="<%=Array.from(course[ele]['n']).join(',')%>" data-gradStudents="<%=Array.from(course[ele]['g']).join(',')%>" > 
+                        <td><%=ele%> - <%=course[ele]['courseName']%></td>
+                        <td><%=course[ele]['n'].size%></td>
+                        <td><%=course[ele]['g'].size%></td>
+                    </tr>
+                <%}%>
+            </tbody>
+        </table>
+    </div>
+    <div  class="mytable1" >
+        <button onclick="ex('students')">download</button>
+        <table id="students">
+            <thead>
+                <th colspan="2" id="coursename"></th>
+            </thead>
+            <thead>
+                <th>normal students</th>
+                <th>graduation students</th>
+            </thead>
+            <tbody id="resultBody">
+            </tbody>
+        </table>
+
+    </div>
+
+<script>
+    function showStudents(row)
+    {
+        resultBody=document.getElementById('resultBody')
+        resultBody.innerHTML=''
+        courseName=row.dataset.coursename
+        document.getElementById('coursename').innerHTML=courseName
+        normalStudents=row.dataset.normalstudents.split(',')
+        gradStudents=row.dataset.gradstudents.split(',')
+        console.log(normalStudents)
+        console.log(gradStudents)
+       const maxlist=Math.max(normalStudents.length,gradStudents.length)
+        for(let i = 0;i<maxlist;i++)
+        {
+           let resultRow=document.createElement('tr')
+           let tdNormal=document.createElement('td')
+           let tdGrad=document.createElement('td')
+            if(normalStudents[i]==undefined)
+            {
+                tdNormal.innerHTML=''
+            }
+            else{
+                tdNormal.innerHTML=normalStudents[i]
+            }
+            if(gradStudents[i]==undefined)
+            {
+                tdGrad.innerHTML=''
+            }
+            else{
+                tdGrad.innerHTML=gradStudents[i]
+            }
+            resultRow.appendChild(tdNormal)
+            resultRow.appendChild(tdGrad)
+            resultBody.appendChild(resultRow)
+        }
+
+
+        
+    }
+</script>
+
+
+</body>
+
+</html>

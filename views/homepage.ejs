@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting </title>
+    <link rel="stylesheet" href="./homepage.css">
+</head>
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <h1>Hello  <%=name%> </h1>
+    <a href="/logout">Logout</a>
+
+    <form enctype="multipart/form-data" action="/ChoosefileRest" method="post" class="rest_stu_form">
+        <p>Choose Rest Subject File For Student</p><br>
+        <input type="file" name="rest_stu">
+        <input type="submit" value="ADD" id="submit1"><br><br>
+        <p>table of exist files</p>
+
+        <!-- here is a table for rest subject files-->
+        
+        <div class="fixTableHead">
+            <table border="1%">
+                <thead>
+                    <tr>
+                        <td>link of file</td>
+                        <td>delete row</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%restFiles.forEach((e)=>{%>
+                        <tr>
+                            <td><%=e.path%></td>
+                            <td><a href="/deletefiles?id=<%=e.id%>"> delete </a> </td>
+                        </tr>
+                        <%})%>
+                    </tbody>
+                </table>
+                <br><br>
+            </div>
+            
+        </form>
+
+    <form enctype="multipart/form-data" action="/ChoosefilePre" method="post" class="pre_req_form">
+        <p>Choose Pre Request file </p><br>
+        <input type="file" name="pre_req">
+        <input type="submit" value="ADD" id="submit2"><br><br>
+        <p>table of exist files</p>
+
+        <!-- here is a table for pre request files -->
+
+        <div class="fixTableHead">
+            <table border="1%">
+                <thead>
+                    <tr>
+                        <td>link of file</td>
+                        <td>delete raw</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%preReqFiles.forEach((e)=>{%>
+                        <tr>
+                            <td><%=e.path%></td>
+                           <!-- <td><form  action="/deletepreReq" method="post" class="deleteform"><button>delete</button></form></td>-->
+                           <td><a href="/deletefiles?id=<%=e.id%>"> delete </a> </td>
+                        </tr>
+                    <%})%>
+                </tbody>
+            </table>
+            <br><br>
+        </div>
+    </form>
+
+
+    <!-- here is a select  -->
+
+    <form class="selectForm" action="/send" method="post">
+
+        <div id="m">
+            <div class="l1">
+                <label>choose rest student file</label>
+                <select name="RestStuFile" class="selectRest">
+                    <%restFiles.forEach((ele)=>{%>
+                        <option value="<%=ele.path%>">
+                            <%=ele.path%>
+                        </option>
+                        <%})%>
+                </select>
+            </div>
+
+            <div class="l1">
+                <label >choose pre request file </label>
+                <select name="PreReqFile" class="selectPre">
+                    <%preReqFiles.forEach((ele)=>{%>
+                        <option value="<%=ele.path%>">
+                            <%=ele.path%>
+                        </option>
+                        <%})%>
+                </select>
+            </div>
+        </div>
+        <br><br><br>
+        <label for="">Enter cumulative hours for graduation Students</label>
+        <input type="number" name="cumulativehours">   
+        <br>
+        <input type="submit" value="show" id="submit3"> 
+
+
+    </form>
+    <br><br>
+
+</body>
+
+</html>

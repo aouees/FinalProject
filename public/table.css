@@ -1,0 +1,121 @@
+body {
+  background-color: #38373f;
+}
+.background {
+  width: 430px;
+  height: 520px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+.shape:first-child {
+  background: linear-gradient(#1845ad, #23a2f6);
+  left: -80px;
+  top: -80px;
+}
+.shape:last-child {
+  background: linear-gradient(to right, #ff512f, #f09819);
+  right: -30px;
+  bottom: -80px;
+}
+button {
+  border: none;
+  width: 90%;
+  margin: 5px;
+  background-color: #ffffff;
+  color: #080710;
+  font-size: 18px;
+  padding: 15px 0px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+}
+select{
+  border: none;
+  width: 100%;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  background-color: #ffffff;
+  color: #080710;
+  font-size: 18px;
+  padding: 15px 10px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+}
+label{
+  margin-right: 5px;
+  margin-left: 5px;
+color: white;
+}
+
+
+.choose {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.mytable {
+ text-align: center;
+  width: 650px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 40%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  overflow: auto;
+  font-size: 18px;
+
+}
+.mytable1 {
+  text-align: center;
+  width: 650px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 125%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  overflow: auto;
+  font-size: 18px;
+
+}
+table * {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+th{
+  font-weight: bold;
+}
+table{
+  width: 100%;
+}
+tr:hover{
+  background-color:#080710 ;
+}
+thead{
+  position: sticky;
+  top: 0;
+  background-color: #080710;
+}
+
+

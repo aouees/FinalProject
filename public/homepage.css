@@ -1,0 +1,204 @@
+body {
+    background-color: #38373f;
+}
+
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.background .shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.shape:first-child {
+    background: linear-gradient(#1845ad, #23a2f6);
+    left: -100px;
+    top: -80px;
+}
+
+.shape:last-child {
+    background: linear-gradient(to right,
+            #ff512f,
+            #f09819);
+    right: -30px;
+    bottom: -80px;
+}
+
+h1 {
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Segoe UI';
+}
+
+p {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+/*============================== form design =========================================================*/
+.rest_stu_form {
+    height: 350px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 30%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 10px 35px;
+    color: white;
+    align-content: center;
+}
+
+.pre_req_form {
+    height: 350px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top:40%;
+    left: 70%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 10px 35px;
+    color: white;
+    align-content: center;
+}
+
+.selectForm {
+    height: 200px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 90%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+    color: white;
+    align-content: center;
+}
+#deleteform{
+background-color: red;
+padding: 0px;
+margin: 0px;
+position: absolute;
+top :100%
+
+}
+
+/*============================== table desiign =========================================================*/
+.fixTableHead {
+    overflow-y: auto;
+    height: 150px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:hover {
+    background-color: coral;
+    font-weight: bold;
+    color: black;
+}
+
+th,
+td {
+    margin-top: 8px;
+    padding: 10px;
+    border: 2px solid white;
+}
+
+.fixTableHead thead {
+    position: sticky;
+    top: 0;
+    background-color: #080710;
+}
+
+/*============================== button desiign =========================================================*/
+
+button {
+    border: none;
+    width: 100%;
+    background-color: white;
+    color: #080710;
+    font-size: 15px;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*============================== select desiign =========================================================*/
+select {
+    border: 5px;
+    background-color: #ffffff;
+    color: #080710;
+    font-size: 15px;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    top: 40px;
+    justify-content: left;
+    display: flex;
+}
+#m{
+    display: flex;
+    justify-content: center;
+}
+.l1{
+    margin: 5px;
+    padding: 5px;
+}
+label{
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+
+input[type="submit"]{
+    padding: 0px 20px 0px 20px;
+    color: black;
+    background-color: coral;
+    border-radius: 5px;
+}
+#submit3{
+background-color: coral;
+border-radius: 10px;
+padding: 15px;
+position: relative;
+top: 15%;
+left: 15%;
+width: 70%;
+border: 2px solid brown;
+font-weight: bold;
+font-size: large;
+}
+
+
+a{
+    color: white;
+}
